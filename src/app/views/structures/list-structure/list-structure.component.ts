@@ -10,8 +10,7 @@ import { Structures } from '../../../modeles/structures';
 
 @Component({
   selector: 'app-list-structure',
-  templateUrl: './list-structure.component.html',
-  styleUrls: ['./list-structure.component.scss']
+  templateUrl: './list-structure.component.html'
 })
 export class ListStructureComponent implements OnInit {
 

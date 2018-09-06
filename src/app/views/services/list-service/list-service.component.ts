@@ -10,8 +10,7 @@ import { Services } from '../../../modeles/services';
 
 @Component({
   selector: 'app-list-service',
-  templateUrl: './list-service.component.html',
-  styleUrls: ['./list-service.component.scss']
+  templateUrl: './list-service.component.html'
 })
 export class ListServiceComponent implements OnInit {
 

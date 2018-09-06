@@ -10,23 +10,27 @@ import { AddUserComponent } from '../add-user/add-user.component';
 
 @Component({
   selector: 'app-list-user',
-  templateUrl: './list-user.component.html',
-  styleUrls: ['./list-user.component.scss']
+  templateUrl: './list-user.component.html'
 })
 export class ListUserComponent implements OnInit {
 
- private users:Users[];
- bsModalRef: BsModalRef;
+  users: Users[];
+  bsModalRef: BsModalRef;
 
 
-  constructor(private _userService:UsersService, private _router:Router, private modalService: BsModalService) { }
+  constructor(private _userService: UsersService,
+    private _router: Router, private modalService: BsModalService) { }
 
   ngOnInit() {
-    this._userService.getUsers().subscribe((users)=>{
-      console.log(users); 
-    },(error)=>{ 
-      console.log(error);
-})
+   
+
+    this._userService.getUsers().subscribe(
+      data =>{
+        console.log(data);
+      this.users = data;
+    },
+    error=> console.error(error)
+    );
   }
 
   primaryModal() {
@@ -34,5 +38,5 @@ export class ListUserComponent implements OnInit {
     this.bsModalRef.content.closeBtnName = 'Close';
 
   }
- 
+
 }

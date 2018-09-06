@@ -5,8 +5,8 @@ import { ListStructureComponent } from './list-structure/list-structure.componen
 import { StructuresRoutingModule } from './structures-routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap';
-import { StructuresService } from '../../../../angular/app/services/structures.service';
 import { ModalDirective } from 'ngx-bootstrap/modal';
+import { StructuresService } from '../../services/structures.service';
 
 @NgModule({
   imports: [
