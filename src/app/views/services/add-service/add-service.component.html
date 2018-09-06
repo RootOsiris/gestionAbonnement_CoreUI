@@ -2,7 +2,7 @@
   <div class="modal-primary modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title pull-left"><strong>Formulaires d'Ajout: </strong> Strucures</h4>
+        <h4 class="modal-title pull-left"><strong>Formulaires d'Ajout: </strong> Services</h4>
         <button type="button" class="close" aria-label="Close" (click)="bsModalRef.hide()">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -16,16 +16,25 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fa fa-user"></i></span>
                     </div>
-                    <input type="text" id="name" name="name" class="form-control" placeholder="Entrez la dénomination de la structure">
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Entrez le nom service">
                   </div>
-                </div>
+                </div>                
                 
                 <div class="form-group">
                   <div class="input-group">
                     <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fa fa-building"></i></span>
+                      <span class="input-group-text"><i class="fa fa-cog"></i></span>
                     </div>
-                    <input type="text" id="adresse" name="adresse" class="form-control" placeholder="Entrez l'adresse">
+                    <input type="text" id="type" name="type" class="form-control" placeholder="Type de service">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-money"></i></span>
+                    </div>
+                    <input type="number" min="0" id="prix" name="prix" class="form-control" placeholder="Prix de base">
                   </div>
                 </div>
                 
@@ -34,26 +43,19 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fa fa-comment"></i></span>
                     </div>
-                    <textarea id="Dtextarea" name="Dtextarea" rows="9" class="form-control" placeholder="Une description.."></textarea>
+                    <textarea id="Stextarea" name="Stextarea" rows="9" class="form-control" placeholder="Une description.."></textarea>
                   </div>
                 </div>                                            
           
                 <div class="form-group row">
-                  <label class="col-md-3 col-form-label" for="select2">Statut</label>
+                  <label class="col-md-3 col-form-label" for="select2">Strucures</label>
                   <div class="col-md-9">
                     <select id="select2" name="select2" class="form-control form-control-lg">                      
-                      <option value="1">Parent</option>
-                      <option value="2">Filiale</option>
+                      <option value="1">S1</option>
+                      <option value="2">S2</option>
                     </select>
                   </div>
-                </div>
-          
-                <div class="form-group row">
-                  <div class="col-md-9">
-                    <input type="file" id="file-input" name="file-input">
-                    <span class="help-block">Choisissez un logo</span>                
-                  </div>
-                </div>
+                </div>          
     </div>
       </div>
       <div class="modal-footer">

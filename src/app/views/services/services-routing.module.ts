@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ListServiceComponent } from './list-service/list-service.component';
+import { AddServiceComponent } from '../services/add-service/add-service.component';
 
 
 
@@ -11,15 +13,15 @@ const routes: Routes = [
     },
     children: [
       {
-        path: 'listservices',
-        //component: ,
+        path: 'listservice',
+        component: ListServiceComponent,
         data: {
           title: 'Lister Services'
         }
       },
       {
-        path: 'addservices',
-        //component: ,
+        path: 'addservice',
+        component: AddServiceComponent,
         data: {
           title: 'Ajouter Services'
         }
