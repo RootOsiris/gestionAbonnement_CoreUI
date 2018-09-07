@@ -16,7 +16,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fa fa-user"></i></span>
                     </div>
-                    <input type="text" id="name" name="name" class="form-control" placeholder="Entrez la dénomination de la structure">
+                    <input type="text" id="name" name="name" class="form-control" [(ngModel)]="structure.denomination" placeholder="Entrez la dénomination de la structure">
                   </div>
                 </div>
                 
@@ -25,7 +25,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fa fa-building"></i></span>
                     </div>
-                    <input type="text" id="adresse" name="adresse" class="form-control" placeholder="Entrez l'adresse">
+                    <input type="text" id="adresse" name="adresse" class="form-control" [(ngModel)]="structure.adresse" placeholder="Entrez l'adresse">
                   </div>
                 </div>
                 
@@ -34,7 +34,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fa fa-comment"></i></span>
                     </div>
-                    <textarea id="Dtextarea" name="Dtextarea" rows="9" class="form-control" placeholder="Une description.."></textarea>
+                    <textarea id="Dtextarea" name="Dtextarea" rows="9" class="form-control" [(ngModel)]="structure.decription" placeholder="Une description.."></textarea>
                   </div>
                 </div>                                            
           

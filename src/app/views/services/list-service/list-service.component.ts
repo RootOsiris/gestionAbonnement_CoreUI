@@ -29,6 +29,15 @@ export class ListServiceComponent implements OnInit {
 })
   }
 
+  deleteService(service)
+  {
+    this._serviceService.deleteService(service.id_Service).subscribe((data)=>{
+          this.services.splice(this.services.indexOf(service),1);
+    },(error)=>{
+      console.log(error);
+    });
+  }
+
   primaryModal() {
     this.bsModalRef = this.modalService.show(AddServiceComponent);
     this.bsModalRef.content.closeBtnName = 'Close';

@@ -7,6 +7,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap';
 import { StructuresService } from '../../../../angular/app/services/structures.service';
 import { ModalDirective } from 'ngx-bootstrap/modal';
+import { EditStructureComponent } from './edit-structure/edit-structure.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { ModalDirective } from 'ngx-bootstrap/modal';
   ],
   entryComponents:[AddStructureComponent],
   providers:[StructuresService],
-  declarations: [AddStructureComponent, ListStructureComponent]
+  declarations: [AddStructureComponent, ListStructureComponent, EditStructureComponent]
 })
 export class StructuresModule { }

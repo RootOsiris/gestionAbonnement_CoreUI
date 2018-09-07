@@ -16,6 +16,7 @@ import { Structures } from '../../../modeles/structures';
 export class ListStructureComponent implements OnInit {
 
   private structures:Structures[];
+  private structure:Structures;
   bsModalRef: BsModalRef;
  
  
@@ -23,11 +24,33 @@ export class ListStructureComponent implements OnInit {
 
   ngOnInit() {
     this._structureService.getStructures().subscribe((structures)=>{
+      this.structures=structures;
       console.log(structures); 
     },(error)=>{ 
       console.log(error);
 })
   }
+
+  deleteStructure(structure)
+  {
+    this._structureService.deleteStructure(structure.id_Structure).subscribe((data)=>{
+          this.structures.splice(this.structures.indexOf(structure),1);
+    },(error)=>{
+      console.log(error);
+    });
+  }  
+
+  createStructure(){
+    let structure = new Structures
+    this._structureService.setter(this.structure);
+    this._router.navigate(['/listStructure']);
+  }
+
+  updateStructure(){
+      this._structureService.setter(this.structure);
+      this._router.navigate(['/structures/listStructure']);
+  }
+ 
 
   primaryModal() {
     this.bsModalRef = this.modalService.show(AddStructureComponent);

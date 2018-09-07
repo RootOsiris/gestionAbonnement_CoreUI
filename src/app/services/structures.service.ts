@@ -46,4 +46,11 @@ export class StructuresService {
      return Observable.throw(error||"SERVER ERROR");
 }
 
+setter(structure:Structures){
+  this.structure=structure;
+}
+
+getter(){
+  return this.structure;
+}
 }
