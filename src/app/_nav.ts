@@ -54,12 +54,12 @@ export const navItems = [
   children: [
     {
       name: 'Lister',
-      url: '',
+      url: '/services/listservice',
       icon: 'icon-calculator'
     },
     {
       name: 'Ajouter',
-      url: '',
+      url: '/services/addservice',
       icon: 'icon-calculator'
     }      
   ]
