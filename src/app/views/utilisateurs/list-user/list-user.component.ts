@@ -23,11 +23,21 @@ export class ListUserComponent implements OnInit {
 
   ngOnInit() {
     this._userService.getUsers().subscribe((users)=>{
-      console.log(users); 
+      this.users=users;
+      console.log(users);
     },(error)=>{ 
       console.log(error);
 })
   }
+
+  deleteUser(user)
+  {
+    this._userService.deleteUser(user.id_User).subscribe((data)=>{
+          this.users.splice(this.users.indexOf(user),1);
+    },(error)=>{
+      console.log(error);
+    });
+  } 
 
   primaryModal() {
     this.bsModalRef = this.modalService.show(AddUserComponent);
