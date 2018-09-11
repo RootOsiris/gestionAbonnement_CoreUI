@@ -16,7 +16,7 @@ export class DefaultLayoutComponent implements OnInit {
   currentUser: Users;
 
   constructor(private userService: UsersService) {
-    console.log(localStorage.getItem('currentUser'));
+    //console.log(localStorage.getItem('currentUser'));
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.changes = new MutationObserver((mutations) => {
       this.sidebarMinimized = document.body.classList.contains('sidebar-minimized');
@@ -26,7 +26,11 @@ export class DefaultLayoutComponent implements OnInit {
       attributes: true
     });
   }
-  ngOnInit() {
+  ngOnInit() { 
     
 }
+  logout(){
+    localStorage.removeItem('currentUser');
+
+  }
 }

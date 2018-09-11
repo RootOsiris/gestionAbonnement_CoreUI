@@ -7,7 +7,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 @Component({
   selector: 'app-add-service',
   templateUrl: './add-service.component.html',
-  styleUrls: ['./add-service.component.scss']
+  styleUrls: ['./add-service.component.scss'] 
 })
 export class AddServiceComponent implements OnInit {
 
