@@ -7,7 +7,7 @@
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
-    <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+    <form enctype="multipart/form-data" class="form-horizontal" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <div class="modal-body">
       <div class="col-md-11">
   
@@ -16,7 +16,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fa fa-user"></i></span>
                   </div>
-                  <input type="text" id="fname" name="fname" class="form-control" placeholder="Entrez votre prénom">
+                  <input type="text" id="fname" formControlName="fname" class="form-control" placeholder="Entrez votre prénom">
                 </div>
               </div>
               
@@ -25,7 +25,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fa fa-user"></i></span>
                   </div>
-                  <input type="text" id="lname" name="lname" class="form-control" placeholder="Entrez votre nom">
+                  <input type="text" id="lname" formControlName="lname" class="form-control" placeholder="Entrez votre nom">
                 </div>
               </div>
               
@@ -34,7 +34,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fa fa-user"></i></span>
                   </div>
-                  <input type="text" id="uname" name="uname" class="form-control" placeholder="Username">
+                  <input type="text" id="login" formControlName="login" class="form-control" placeholder="Username">
                 </div>
               </div>
               
@@ -43,7 +43,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fa fa-envelope"></i></span>
                   </div>
-                  <input type="email" id="email" name="email" class="form-control" placeholder="Email" autocomplete="email">
+                  <input type="email" id="email" formControlName="email" class="form-control" placeholder="Email" >
                 </div>
               </div>
               
@@ -52,8 +52,12 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fa fa-asterisk"></i></span>
                   </div>
-                  <input type="password" id="password" name="password" class="form-control" placeholder="Entrez votre mot de passe" autocomplete="current-password">
+                  <input type="password" id="password" formControlName="password" class="form-control" placeholder="Entrez votre mot de passe" autocomplete="current-password">
                 </div>
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                  <div *ngIf="f.email.errors.required">Email isfd required</div>
+                  <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+              </div>
               </div>
               
               <div class="form-group">
@@ -61,14 +65,14 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fa fa-asterisk"></i></span>
                   </div>
-                  <input type="password" id="cpassword" name="cpassword" class="form-control" placeholder="Entrez à nouveau votre mot de passe" autocomplete="current-password">
+                  <input type="password" id="cpassword" formControlName="cpassword" class="form-control" placeholder="Entrez à nouveau votre mot de passe" autocomplete="current-password">
                 </div>
               </div>
         
               <div class="form-group row">
-                <label class="col-md-3 col-form-label" for="select2">Profiles</label>
+                <label class="col-md-3 col-form-label" for="id_profile">Profiles</label>
                 <div class="col-md-9">
-                  <select id="select2" name="select2" class="form-control form-control-lg">
+                  <select id="profile" formControlName="id_profile" class="form-control form-control-lg">
                     <option value="0">Please select</option>
                     <option value="1">Option #1</option>
                     <option value="2">Option #2</option>
@@ -79,7 +83,7 @@
         
               <div class="form-group row">
                 <div class="col-md-9">
-                  <input type="file" id="file-input" name="file-input">
+                  <input type="file" id="file" formControlName="file">
                   <span class="help-block">Choisissez une photo</span>                
                 </div>
               </div>
