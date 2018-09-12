@@ -15,34 +15,36 @@ import { AddUserComponent } from '../add-user/add-user.component';
 })
 export class ListUserComponent implements OnInit {
 
- private users:Users[];
- bsModalRef: BsModalRef;
+  private users: Users[];
+  bsModalRef: BsModalRef;
 
 
-  constructor(private _userService:UsersService, private _router:Router, private modalService: BsModalService) { }
+  constructor(private _userService: UsersService, private _router: Router,
+    private modalService: BsModalService) { }
 
   ngOnInit() {
-    this._userService.getUsers().subscribe((users)=>{
-      this.users=users;
+    this._userService.getUsers().subscribe((users) => {
+      this.users = users;
       console.log(users);
-    },(error)=>{ 
+    }, (error) => {
       console.log(error);
-})
+    })
   }
 
-  deleteUser(user)
-  {
-    this._userService.deleteUser(user.id_User).subscribe((data)=>{
-          this.users.splice(this.users.indexOf(user),1);
-    },(error)=>{
+  deleteUser(user) {
+    this._userService.deleteUser(user.id_User).subscribe((data) => {
+      this.users.splice(this.users.indexOf(user), 1);
+    }, (error) => {
       console.log(error);
     });
-  } 
+  }
 
   primaryModal() {
-    this.bsModalRef = this.modalService.show(AddUserComponent);
-    this.bsModalRef.content.closeBtnName = 'Close';
-
+    const bsModalRef = this.modalService.show(AddUserComponent);
+    //this.bsModalRef.content.closeBtnName = 'Close';
+    (<AddUserComponent>bsModalRef.content).onClose.subscribe(result => {
+      console.log("fermer");
+      
+    } );    
   }
- 
 }

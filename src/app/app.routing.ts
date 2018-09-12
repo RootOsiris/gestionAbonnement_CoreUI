@@ -17,7 +17,7 @@ export const routes: Routes = [
   },
   {
     path: '404',
-    component: P404Component,
+    component: P404Component, 
     data: {
       title: 'Page 404'
     }

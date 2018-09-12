@@ -14,55 +14,19 @@ export const navItems = [
   },
   {
     name: 'Utilisateurs',
-    url: '/utilisateurs',
-    icon: 'icon-user',
-    children: [
-      {
-        name: 'Lister',
-        url: '/utilisateurs/listUser',
-        icon: 'icon-user'
-      },
-      {
-        name: 'Ajouter',
-        url: '/utilisateurs/addUser',
-        icon: 'icon-user'
-      }      
-    ]
+    url: '/utilisateurs/listUser',
+    icon: 'icon-user',    
  },
  {
   name: 'Structures',
-  url: '/structures',
-  icon: 'icon-puzzle',
-  children: [
-    {
-      name: 'Lister',
-      url: '/structures/listStructure',
-      icon: 'icon-puzzle'
-    },
-    {
-      name: 'Ajouter',
-      url: '/structures/addStructure',
-      icon: 'icon-puzzle'
-    }      
-  ]
+  url: '/structures/listStructure',
+  icon: 'icon-puzzle',  
 },
 {
   name: 'Services',
-  url: '/services',
+  url: '/services/listservice',
   icon: 'icon-calculator',
   variant:'success/danger',
-  children: [
-    {
-      name: 'Lister',
-      url: '/services/listservice',
-      icon: 'icon-calculator'
-    },
-    {
-      name: 'Ajouter',
-      url: '/services/addservice',
-      icon: 'icon-calculator'
-    }      
-  ]
 },
 {
   name: 'Abonnes',

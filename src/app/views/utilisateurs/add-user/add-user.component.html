@@ -16,7 +16,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fa fa-user"></i></span>
                   </div>
-                  <input type="text" id="fname" formControlName="fname" class="form-control" placeholder="Entrez votre prénom">
+                  <input type="text" id="prenom" formControlName="prenom" class="form-control" placeholder="Entrez votre prénom">
                 </div>
               </div>
               
@@ -25,7 +25,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fa fa-user"></i></span>
                   </div>
-                  <input type="text" id="lname" formControlName="lname" class="form-control" placeholder="Entrez votre nom">
+                  <input type="text" id="nom" formControlName="nom" class="form-control" placeholder="Entrez votre nom">
                 </div>
               </div>
               
@@ -35,6 +35,15 @@
                     <span class="input-group-text"><i class="fa fa-user"></i></span>
                   </div>
                   <input type="text" id="login" formControlName="login" class="form-control" placeholder="Username">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                  </div>
+                  <input type="text" id="telephone" formControlName="telephone" class="form-control" placeholder="Telephones">
                 </div>
               </div>
               
@@ -52,12 +61,8 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fa fa-asterisk"></i></span>
                   </div>
-                  <input type="password" id="password" formControlName="password" class="form-control" placeholder="Entrez votre mot de passe" autocomplete="current-password">
-                </div>
-                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                  <div *ngIf="f.email.errors.required">Email isfd required</div>
-                  <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
-              </div>
+                  <input type="password" id="mdp" formControlName="mdp" class="form-control" placeholder="Entrez votre mot de passe" autocomplete="current-password">
+                </div>                
               </div>
               
               <div class="form-group">
@@ -72,7 +77,7 @@
               <div class="form-group row">
                 <label class="col-md-3 col-form-label" for="id_profile">Profiles</label>
                 <div class="col-md-9">
-                  <select id="profile" formControlName="id_profile" class="form-control form-control-lg">
+                  <select id="id_profile" formControlName="id_profile" class="form-control form-control-lg">
                     <option value="0">Please select</option>
                     <option value="1">Option #1</option>
                     <option value="2">Option #2</option>
@@ -90,7 +95,7 @@
   </div>
     </div>
     <div class="modal-footer">
-        <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Enregistrer</button>
+        <button [disabled]="registerForm.invalid" type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Enregistrer</button>
       <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">Fermer</button>
     </div>
   </form>
