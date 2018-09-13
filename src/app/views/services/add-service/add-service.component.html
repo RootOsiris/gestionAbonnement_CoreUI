@@ -7,64 +7,63 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
-      <div class="modal-body">
-        <div class="col-md-11">
-    
-                 <div class="form-group">
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fa fa-user"></i></span>
-                    </div>
-                    <input type="text" id="name" name="name" class="form-control" placeholder="Entrez le nom service">
-                  </div>
-                </div>                
-                
-                <div class="form-group">
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fa fa-cog"></i></span>
-                    </div>
-                    <input type="text" id="type" name="type" class="form-control" placeholder="Type de service">
-                  </div>
-                </div>
+      <form enctype="multipart/form-data" class="form-horizontal" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="modal-body">
+          <div class="col-md-11">
 
-                <div class="form-group">
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fa fa-money"></i></span>
-                    </div>
-                    <input type="number" min="0" id="prix" name="prix" class="form-control" placeholder="Prix de base">
-                  </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-user"></i></span>
                 </div>
-                
-                <div class="form-group">
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fa fa-comment"></i></span>
-                    </div>
-                    <textarea id="Stextarea" name="Stextarea" rows="9" class="form-control" placeholder="Une description.."></textarea>
-                  </div>
-                </div>                                            
-          
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label" for="select2">Strucures</label>
-                  <div class="col-md-9">
-                    <select id="select2" name="select2" class="form-control form-control-lg">                      
-                      <option value="1">S1</option>
-                      <option value="2">S2</option>
-                    </select>
-                  </div>
-                </div>          
+                <input type="text" id="nom" formControlName="nom" class="form-control" placeholder="Entrez le nom service">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-cog"></i></span>
+                </div>
+                <input type="text" id="type" formControlName="type" class="form-control" placeholder="Type de service">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-money"></i></span>
+                </div>
+                <input type="number" min="0" id="prixdebase" formControlName="prixdebase" class="form-control" placeholder="Prix de base">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-comment"></i></span>
+                </div>
+                <textarea id="description" formControlName="description" rows="9" class="form-control" placeholder="Une description.."></textarea>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label" for="id_sructure">Strucures</label>
+              <div class="col-md-9">
+                <select id="id_sructure" formControlName="id_sructure" class="form-control form-control-lg">
+                  <option value="1">S1</option>
+                  <option value="2">S2</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button [disabled]="registerForm.invalid" type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i>
+            Enregistrer</button>
+          <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">Fermer</button>
+        </div>
+      </form>
     </div>
-      </div>
-      <div class="modal-footer">
-          <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Enregistrer</button>
-        <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">Fermer</button>
-      </div>
-    </form>
-    </div>
-  </div> 
   </div>
-  
-  
+</div>

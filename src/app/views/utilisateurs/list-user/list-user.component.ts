@@ -43,8 +43,6 @@ export class ListUserComponent implements OnInit {
     const bsModalRef = this.modalService.show(AddUserComponent);
     //this.bsModalRef.content.closeBtnName = 'Close';
     (<AddUserComponent>bsModalRef.content).onClose.subscribe(result => {
-      console.log("fermer");
-      
     } );    
   }
 }

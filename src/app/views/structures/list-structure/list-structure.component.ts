@@ -15,47 +15,47 @@ import { Structures } from '../../../modeles/structures';
 })
 export class ListStructureComponent implements OnInit {
 
-  private structures:Structures[];
-  private structure:Structures;
+  private structures: Structures[];
+  private structure: Structures;
   bsModalRef: BsModalRef;
- 
- 
-   constructor(private _structureService:StructuresService, private _router:Router, private modalService: BsModalService) { }
+
+
+  constructor(private _structureService: StructuresService, private _router: Router, private modalService: BsModalService) { }
 
   ngOnInit() {
-    this._structureService.getStructures().subscribe((structures)=>{
-      this.structures=structures;
-      console.log(structures); 
-    },(error)=>{ 
+    this._structureService.getStructures().subscribe((structures) => {
+      this.structures = structures;
+      console.log(structures);
+    }, (error) => {
       console.log(error);
-})
+    })
   }
 
-  deleteStructure(structure)
-  {
-    this._structureService.deleteStructure(structure.id_Structure).subscribe((data)=>{
-          this.structures.splice(this.structures.indexOf(structure),1);
-    },(error)=>{
+  deleteStructure(structure) {
+    this._structureService.deleteStructure(structure.id_Structure).subscribe((data) => {
+      this.structures.splice(this.structures.indexOf(structure), 1);
+    }, (error) => {
       console.log(error);
     });
-  }  
+  }
 
-  createStructure(){
+  createStructure() {
     let structure = new Structures
     this._structureService.setter(this.structure);
     this._router.navigate(['/listStructure']);
   }
 
-  updateStructure(){
-      this._structureService.setter(this.structure);
-      this._router.navigate(['/structures/listStructure']);
+  updateStructure() {
+    this._structureService.setter(this.structure);
+    this._router.navigate(['/structures/listStructure']);
   }
- 
+
 
   primaryModal() {
-    this.bsModalRef = this.modalService.show(AddStructureComponent);
-    this.bsModalRef.content.closeBtnName = 'Close';
-
+    const bsModalRef = this.modalService.show(AddStructureComponent);
+    //this.bsModalRef.content.closeBtnName = 'Close';
+    (<AddStructureComponent>bsModalRef.content).onClose.subscribe(result => {
+    });
   }
- 
+
 }

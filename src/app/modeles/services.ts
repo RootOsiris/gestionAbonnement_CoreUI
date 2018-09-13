@@ -7,6 +7,8 @@ export class Services {
     prixdebase:number;
    
     description:string;
+
+    etat:boolean;
        
     id_Structure:number;
    

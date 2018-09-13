@@ -3,14 +3,16 @@ import { CommonModule } from '@angular/common';
 import { AddStructureComponent } from './add-structure/add-structure.component';
 import { ListStructureComponent } from './list-structure/list-structure.component';
 import { StructuresRoutingModule } from './structures-routing.module';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule,FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap';
 import { StructuresService } from '../../services/structures.service';
 import { ModalDirective } from 'ngx-bootstrap/modal';
 import { EditStructureComponent } from './edit-structure/edit-structure.component';
 
+
 @NgModule({
   imports: [
+    ReactiveFormsModule,
     CommonModule,
     FormsModule,
     ModalModule.forRoot(),

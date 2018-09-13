@@ -26,4 +26,4 @@ export class Users {
     
     deletedAt:string;
 
-}
+} 
