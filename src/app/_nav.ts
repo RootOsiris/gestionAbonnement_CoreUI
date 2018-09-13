@@ -21,12 +21,7 @@ export const navItems = [
         name: 'Lister',
         url: '/utilisateurs/listUser',
         icon: 'icon-user'
-      },
-      {
-        name: 'Ajouter',
-        url: '/utilisateurs/addUser',
-        icon: 'icon-user'
-      }      
+      }     
     ]
  },
  {
@@ -56,12 +51,7 @@ export const navItems = [
       name: 'Lister',
       url: '/services/listservice',
       icon: 'icon-calculator'
-    },
-    {
-      name: 'Ajouter',
-      url: '/services/addservice',
-      icon: 'icon-calculator'
-    }      
+    }
   ]
 },
 {
@@ -72,14 +62,9 @@ export const navItems = [
   children: [
     {
       name: 'Lister',
-      url: '',
+      url: '/abonnes/listabonnes',
       icon: 'icon-bell'
-    },
-    {
-      name: 'Ajouter',
-      url: '',
-      icon: 'icon-bell'
-    }      
+    }
   ]
 },
 {
@@ -90,14 +75,9 @@ export const navItems = [
   children: [
     {
       name: 'Lister',
-      url: '',
+      url: '/abonnements/listabonnements',
       icon: 'icon-cursor'
-    },
-    {
-      name: 'Ajouter',
-      url: '',
-      icon: 'icon-cursor'
-    }      
+    }   
   ]
 },
   {

@@ -22,8 +22,6 @@ export class AddUserComponent implements OnInit {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     console.log(localStorage.getItem('currentUser'));
   }
-
-
   ngOnInit() {
   }
 

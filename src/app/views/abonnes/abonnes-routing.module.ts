@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { ListAbonnesComponent } from './list-abonnes/list-abonnes/list-abonnes.component';
 
 
 const routes: Routes = [
@@ -12,7 +12,7 @@ const routes: Routes = [
     children: [
       {
         path: 'listabonnes',
-        //component: ,
+        component:ListAbonnesComponent ,
         data: {
           title: 'Lister Abonnes'
         }

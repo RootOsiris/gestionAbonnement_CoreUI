@@ -18,7 +18,6 @@ export class ListUserComponent implements OnInit {
  private users:Users[];
  bsModalRef: BsModalRef;
 
-
   constructor(private _userService:UsersService, private _router:Router, private modalService: BsModalService) { }
 
   ngOnInit() {
@@ -28,6 +27,7 @@ export class ListUserComponent implements OnInit {
     },(error)=>{ 
       console.log(error);
 })
+
   }
 
   deleteUser(user)
@@ -43,6 +43,5 @@ export class ListUserComponent implements OnInit {
     this.bsModalRef = this.modalService.show(AddUserComponent);
     this.bsModalRef.content.closeBtnName = 'Close';
 
-  }
- 
+  } 
 }

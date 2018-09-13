@@ -37,7 +37,6 @@ export class UsersService {
 }
    
    updateUser(user:Users){
-
     return this._http.put(this.baseUrl+'/users',user).map(map=>map); 
 }
   
@@ -46,5 +45,4 @@ export class UsersService {
      return Observable.throw(error||"SERVER ERROR");
 }
  
-
 }

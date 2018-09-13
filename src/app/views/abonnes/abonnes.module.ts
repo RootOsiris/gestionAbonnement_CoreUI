@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ModalModule } from 'ngx-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { AbonnesRoutingModule } from './abonnes-routing.module';
+import { ListAbonnesComponent } from './list-abonnes/list-abonnes/list-abonnes.component';
+import { AddAbonnesComponent } from './add-abonnes/add-abonnes.component';
 
 @NgModule({
   imports: [
@@ -11,6 +13,6 @@ import { AbonnesRoutingModule } from './abonnes-routing.module';
     ModalModule.forRoot(),
     AbonnesRoutingModule
   ],
-  declarations: []
+  declarations: [ListAbonnesComponent, AddAbonnesComponent]
 })
 export class AbonnesModule { }
