@@ -1,3 +1,105 @@
-<p>
-  add-abonnes works!
-</p>
+<div bsModal #lgModal="bs-modal" class="modal-fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-primary modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left"><strong>Nouveau: </strong> Abonne</h4>
+        <button type="button" class="close" aria-label="Close" (click)="bsModalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form  #adisform="ngForm" (ngSubmit)="onSubmit(adisform)" enctype="multipart/form-data" class="form-horizontal" >
+        <div class="modal-body">
+            <div class="form-row">
+                <div class="col">
+                    <div class="form-group">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                          </div>
+                          <input type="text" id="prenom" name="prenom" class="form-control" placeholder="Prenom" ngModel required>
+                        </div>
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                          </div>
+                          <input type="text" id="nom" name="nom" class="form-control" placeholder="Nom" ngModel required>
+                        </div>
+                      </div>
+                </div>
+              </div>
+              <div class="form-row">
+                  <div class="col">
+                      <div class="form-group">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                            </div>
+                            <input type="text" id="mail" name="mail" class="form-control" placeholder="Mail" ngModel required>
+                          </div>
+                        </div>
+                  </div>
+                  <div class="col">
+                      <div class="form-group">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fa fa-institution"></i></span>
+                            </div>
+                            <input type="text" id="adresse" name="adresse" class="form-control" placeholder="Adresse" ngModel required>
+                          </div>
+                        </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group">
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-vcard-o"></i></span>
+                              </div>
+                              <select id="select2" name="select2" class="form-control form-control-lg" ngModel required>   
+                                  <option value="">Choisir une structure</option>                   
+                                <option value="1">S1</option>
+                                <option value="2">S2</option>
+                              </select>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                              </div>
+                              <input type="number" id="telephone" name="telephone" class="form-control" placeholder="Telephone" ngModel required>
+                            </div>
+                          </div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                      <div class="col">
+                          <div class="form-group">
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text"><i class="fa fa-vcard-o"></i></span>
+                                </div>
+                                <input type="text" id="code" name="code" class="form-control" placeholder="Code" ngModel required>
+                              </div>
+                            </div>
+                      </div>
+                      <div class="col"></div>
+                    </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-sm btn-primary" [disabled]="adisform.invalid"><i class="fa fa-dot-circle-o"></i>Enregistrer</button>
+          <button type="button" class="btn btn-sm btn-danger" (click)="bsModalRef.hide()">Fermer</button>
+        </div>
+      </form>     
+    </div>
+  </div> 
+  </div>
+  
+  

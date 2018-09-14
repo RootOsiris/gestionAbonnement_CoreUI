@@ -14,8 +14,10 @@ import { AddAbonnesComponent } from '../../add-abonnes/add-abonnes.component';
   styleUrls: ['./list-abonnes.component.scss']
 })
 export class ListAbonnesComponent implements OnInit {
+
+  abonnes: Abonnes[];
   bsModalRef: BsModalRef;
-   abonnes: Abonnes[]=[{ id_abonne:1,
+ /*abonnes: Abonnes[]=[{ id_abonne:1,
     adresse: 'Mboumba',
     code: 'ok',
     created_at: 'ok',
@@ -53,9 +55,17 @@ export class ListAbonnesComponent implements OnInit {
         update_at:'ok' }
     ];
 
-  constructor(private _abonnesService:AbonnesService, private _router:Router, private modalService: BsModalService) { }
-  ngOnInit() {
-  
+*/
+
+  constructor(private  _abonnesService:AbonnesService, private  _router:Router, private modalService: BsModalService) { }
+  ngOnInit(){
+    this._abonnesService.getAbonnes().subscribe((abonnes)=>{
+      this.abonnes=abonnes;
+      console.log(abonnes);
+    },(error)=>{ 
+      console.log(error);
+})
+
   }
 
   primaryModal() {
