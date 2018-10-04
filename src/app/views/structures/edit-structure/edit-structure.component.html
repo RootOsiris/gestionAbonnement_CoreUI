@@ -1,3 +1,150 @@
-<p>
-  edit-structure works!
-</p>
+<!--<div bsModal #lgModal="bs-modal" class="modal-fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-primary modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left"><strong>Formulaires d'Ajout: </strong> Strucures</h4>
+        <button type="button" class="close" aria-label="Close" (click)="bsModalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+      <div class="modal-body">
+        <div class="col-md-11">
+    
+                 <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-user"></i></span>
+                    </div>
+                    <input type="text" id="name" name="name" class="form-control" [(ngModel)]="structure.denomination" placeholder="Entrez la dénomination de la structure">
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-building"></i></span>
+                    </div>
+                    <input type="text" id="adresse" name="adresse" class="form-control" [(ngModel)]="structure.adresse" placeholder="Entrez l'adresse">
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-comment"></i></span>
+                    </div>
+                    <textarea id="Dtextarea" name="Dtextarea" rows="9" class="form-control" [(ngModel)]="structure.decription" placeholder="Une description.."></textarea>
+                  </div>
+                </div>                                            
+          
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="select2">Statut</label>
+                  <div class="col-md-9">
+                    <select id="select2" name="select2" class="form-control form-control-lg">                      
+                      <option value="1">Parent</option>
+                      <option value="2">Filiale</option>
+                    </select>
+                  </div>
+                </div>
+          
+                <div class="form-group row">
+                  <div class="col-md-9">
+                    <input type="file" id="file-input" name="file-input">
+                    <span class="help-block">Choisissez un logo</span>                
+                  </div>
+                </div>
+    </div>
+      </div>
+      <div class="modal-footer">
+          <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Enregistrer</button>
+        <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">Fermer</button>
+      </div>
+    </form>
+    </div>
+  </div> 
+  </div>
+  
+-->
+<div bsModal #lgModal="bs-modal" class="modal-fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-primary modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left"><strong>Nouvelle: </strong> Strucure</h4>
+        <button type="button" class="close" aria-label="Close" (click)="bsModalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form  #adisform="ngForm" (ngSubmit)="onSubmit(adisform.value)" enctype="multipart/form-data" class="form-horizontal" >
+        <div class="modal-body">
+            <div class="form-row">
+                <div class="col">
+                    <div class="form-group">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                          </div>
+                          <input type="text" id="name" name="denomination" class="form-control"  placeholder="Entrez la dénomination de la structure" [(ngModel)]="selecteStructure.denomination" required>
+                        </div>
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                          </div>
+                          <input type="text" id="adresse" name="adresse" class="form-control"  placeholder="Entrez l'adresse"  [(ngModel)]="selecteStructure.adresse" required>
+                        </div>
+                      </div>
+                </div>
+              </div>
+              <div class="form-row">
+                  <div class="col">
+                      <div class="form-group">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                            </div>
+                            <select id="select2" name="value[option]" class="form-control form-control-lg" [(ngModel)]="selecteStructure.value">                      
+                              <option value="">Choisir statut</option>
+                              <option value="1">Parent</option>
+                              <option value="2">Filiale</option>
+                            </select>
+                          </div>
+                        </div>
+                  </div>
+                  <div class="col">
+                      <div class="form-group">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fa fa-institution"></i></span>
+                            </div>
+                            <input type="text" id="code" name="code" class="form-control" placeholder="Code" [(ngModel)]="selecteStructure.code" required>
+                          </div>
+                        </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group">
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-comment"></i></span>
+                              </div>
+                              <textarea id="Dtextarea" name="description" rows="9" class="form-control"  placeholder="Une description.." [(ngModel)]="selecteStructure.description" required></textarea>
+                            </div>
+                          </div>
+                    </div>
+                  </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-sm btn-primary" [disabled]="adisform.invalid"><i class="fa fa-dot-circle-o"></i>Enregistrer</button>
+          <button type="button" class="btn btn-sm btn-danger" (click)="bsModalRef.hide()" >Fermer</button>
+        </div>
+      </form>     
+    </div>
+  </div> 
+  </div>
+  
+  

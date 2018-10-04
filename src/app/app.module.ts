@@ -21,10 +21,13 @@ import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
-
+import { DropdownModule } from 'angular-custom-dropdown';
 const APP_CONTAINERS = [
   DefaultLayoutComponent
 ];
+import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
+import { NotifierModule, NotifierOptions } from 'angular-notifier';
+
 
 import {
   AppAsideModule,
@@ -33,6 +36,48 @@ import {
   AppFooterModule,
   AppSidebarModule,
 } from '@coreui/angular';
+
+const customNotifierOptions: NotifierOptions = {
+  position: {
+		horizontal: {
+			position: 'left',
+			distance: 12
+		},
+		vertical: {
+			position: 'bottom',
+			distance: 12,
+			gap: 10
+		}
+	},
+  theme: 'material',
+  behaviour: {
+    autoHide: 5000,
+    onClick: 'hide',
+    onMouseover: 'pauseAutoHide',
+    showDismissButton: true,
+    stacking: 4
+  },
+  animations: {
+    enabled: true,
+    show: {
+      preset: 'slide',
+      speed: 300,
+      easing: 'ease'
+    },
+    hide: {
+      preset: 'fade',
+      speed: 300,
+      easing: 'ease',
+      offset: 50
+    },
+    shift: {
+      speed: 300,
+      easing: 'ease'
+    },
+    overlap: 150
+  }
+};
+
 
 // Import routing module
 import { AppRoutingModule } from './app.routing';
@@ -49,6 +94,7 @@ import { ServicesService } from './services/services.service';
 import { StructuresService } from './services/structures.service';
 import { ModalModule } from 'ngx-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { AlertsModule } from 'angular-alert-module';
 
 @NgModule({
   imports: [
@@ -67,7 +113,11 @@ import { HttpClientModule } from '@angular/common/http';
     ModalModule.forRoot(),
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    DropdownModule,
+    NotifierModule.withConfig(customNotifierOptions),
+    AlertsModule.forRoot()
+
   ],
   declarations: [
     AppComponent,
@@ -79,7 +129,9 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [{
     provide: LocationStrategy,
-    useClass: HashLocationStrategy
+    useClass: HashLocationStrategy,
+  
+    
   },  
   UsersService,
   StructuresService,
@@ -87,6 +139,7 @@ import { HttpClientModule } from '@angular/common/http';
   HttpClientModule,
   AbonnementsService,
   AbonnesService
+ 
 ],
   bootstrap: [ AppComponent ]
 })

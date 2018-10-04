@@ -23,6 +23,10 @@ export class StructuresService {
 
     return this._http.get<Structures[]>(this.baseUrl+'/structures').map(map=>map);
 }
+
+getPageStructure(page:number){
+  return this._http.get(this.baseUrl+'/structures/liststructure?page='+page).map(map=>map);
+}
   getStructure(id:number){ 
 
     return this._http.get<Structures>(this.baseUrl+'/structures/'+id).map(map=>map);
@@ -32,9 +36,13 @@ export class StructuresService {
     return this._http.delete(this.baseUrl+'/structures/'+id).map(map=>map);
 }
   createStructure(structure:Structures){
-
     return this._http.post(this.baseUrl+'/structures',structure).map(map=>map);
 }
+
+getSearchStructure(code:String, denomination: String, page:number){
+  return this._http.get(this.baseUrl+'/structures/rechercher?mc='+code+'&tr='+denomination+'&page='+page).map(map=>map);
+}
+
    
    updateStructure(structure:Structures){
 

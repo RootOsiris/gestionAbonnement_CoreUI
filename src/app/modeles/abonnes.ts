@@ -1,12 +1,14 @@
+import { Structures } from "./structures";
+
 export class Abonnes {
-    id_abonne: number;
+    id_Abonne: number;
     adresse: string;
     code: string;
     created_at: string;
     deleted_at: string;
     email: string;
     etat: string;
-    id_structure: number;
+    structure: Structures;
     nom: string;
     prenom: string;
     telephone: number;

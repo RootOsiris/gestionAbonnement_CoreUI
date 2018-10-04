@@ -8,6 +8,7 @@ import { ModalModule } from 'ngx-bootstrap';
 import { ModalDirective } from 'ngx-bootstrap/modal';
 import { EditStructureComponent } from './edit-structure/edit-structure.component';
 import { StructuresService } from '../../services/structures.service';
+import { DeleteStructureComponent } from './delete-structure/delete-structure.component';
 
 @NgModule({
   imports: [
@@ -16,8 +17,8 @@ import { StructuresService } from '../../services/structures.service';
     ModalModule.forRoot(),
     StructuresRoutingModule
   ],
-  entryComponents:[AddStructureComponent],
+  entryComponents:[AddStructureComponent,EditStructureComponent, DeleteStructureComponent],
   providers:[StructuresService],
-  declarations: [AddStructureComponent, ListStructureComponent, EditStructureComponent]
+  declarations: [AddStructureComponent, ListStructureComponent, EditStructureComponent, DeleteStructureComponent]
 })
 export class StructuresModule { }

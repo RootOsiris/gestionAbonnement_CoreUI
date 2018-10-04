@@ -18,7 +18,7 @@ export const navItems = [
     icon: 'icon-user',
     children: [
       {
-        name: 'Lister',
+        name: 'Utilisateurs',
         url: '/utilisateurs/listUser',
         icon: 'icon-user'
       }     
@@ -30,7 +30,7 @@ export const navItems = [
   icon: 'icon-puzzle',
   children: [
     {
-      name: 'Lister',
+      name: 'Structures',
       url: '/structures/listStructure',
       icon: 'icon-puzzle'
     },
@@ -48,7 +48,7 @@ export const navItems = [
   variant:'success/danger',
   children: [
     {
-      name: 'Lister',
+      name: 'Services',
       url: '/services/listservice',
       icon: 'icon-calculator'
     }
@@ -61,7 +61,7 @@ export const navItems = [
   variant:'success/danger',
   children: [
     {
-      name: 'Lister',
+      name: 'Abonnes',
       url: '/abonnes/listabonnes',
       icon: 'icon-bell'
     }
@@ -74,7 +74,7 @@ export const navItems = [
   variant:'success/danger',
   children: [
     {
-      name: 'Lister',
+      name: 'Abonnements',
       url: '/abonnements/listabonnements',
       icon: 'icon-cursor'
     }   

@@ -16,7 +16,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fa fa-user"></i></span>
                           </div>
-                          <input type="text" id="prenom" name="prenom" class="form-control" placeholder="Prenom" ngModel required>
+                          <input type="text" id="prenom" name="prenom" class="form-control" placeholder="Prenom" [(ngModel)]="selecteAbonne.prenom" required>
                         </div>
                       </div>
                 </div>
@@ -26,7 +26,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fa fa-user"></i></span>
                           </div>
-                          <input type="text" id="nom" name="nom" class="form-control" placeholder="Nom" ngModel required>
+                          <input type="text" id="nom" name="nom" class="form-control" placeholder="Nom" [(ngModel)]="selecteAbonne.nom" required>
                         </div>
                       </div>
                 </div>
@@ -38,7 +38,7 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text"><i class="fa fa-envelope"></i></span>
                             </div>
-                            <input type="mail" id="mail" name="email" class="form-control" placeholder="Mail" ngModel required>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Mail" [(ngModel)]="selecteAbonne.email" required>
                           </div>
                         </div>
                   </div>
@@ -48,23 +48,23 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text"><i class="fa fa-institution"></i></span>
                             </div>
-                            <input type="text" id="adresse" name="adresse" class="form-control" placeholder="Adresse" ngModel required>
+                            <input type="text" id="adresse" name="adresse" class="form-control" placeholder="Adresse" [(ngModel)]="selecteAbonne.adresse" required>
                           </div>
                         </div>
                   </div>
                 </div>
                 <div class="form-row">
-                    <div class="col">
+                  <div class="col">
                         <div class="form-group">
                             <div class="input-group">
                               <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fa fa-vcard-o"></i></span>
                               </div>
-                              <select class="form-control"  class="form-control form-control-lg" id="structures" name= "structure" ngModel required>
+                              <select class="form-control"  class="form-control form-control-lg" id="structures" name= "structure" [(ngModel)]="selecteAbonne.structure">
                                 <option value="">Choisir une structure</option>
                                 <option *ngFor="let structure of structures" [ngValue]="structure">{{structure.denomination}}</option>
                               </select>
-                            <!--  <select id="structure" name="structure"  (change)="structureChange($structure)" class="form-control form-control-lg" ngModel>   
+                            <!--<select id="structure" name="structure"  (change)="structureChange($structure)" class="form-control form-control-lg" [(ngModel)]="selecteAbonne.structure">   
                                   <option value="">Choisir une structure</option>  
                                   <option *ngFor="let structure of structures" value="{{structure.id_Service}}">{{structure.denomination}}</option>
                               </select>-->
@@ -77,10 +77,11 @@
                               <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fa fa-phone"></i></span>
                               </div>
-                              <input type="number" id="telephone" name="telephone" class="form-control" placeholder="Telephone" ngModel required>
+                              <input type="number" id="telephone" name="telephone" class="form-control" placeholder="Telephone" [(ngModel)]="selecteAbonne.telephone" required>
                             </div>
                           </div>
                     </div>
+                   
                   </div>
                   <div class="form-row">
                       <div class="col">
@@ -89,20 +90,21 @@
                                 <div class="input-group-prepend">
                                   <span class="input-group-text"><i class="fa fa-vcard-o"></i></span>
                                 </div>
-                                <input type="text" id="code" name="code" class="form-control" placeholder="Code" ngModel required>
+                                <input type="text" id="code" name="code" class="form-control" placeholder="Code" [(ngModel)]="selecteAbonne.code" required>
                               </div>
                             </div>
                       </div>
-                      <div class="col">
-                        <div class="form-group">
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                    <!--  <div class="col">
+                          <div class="form-group">
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text"><i class="fa fa-vcard-o"></i></span>
+                                </div>
+                                <input type="text" id="code" name="code" class="form-control" placeholder="Code" [(ngModel)]="selecteAbonne.code" required>
+                              </div>
                             </div>
-                            <input type="date" id="date_creation" name="date_creation" class="form-control" placeholder="Date creation" ngModel required>
-                          </div>
-                        </div>
-                      </div>
+                      </div>-->
+                      <div class="col"></div>
                     </div>
         </div>
         <div class="modal-footer">

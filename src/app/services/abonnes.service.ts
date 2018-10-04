@@ -23,21 +23,27 @@ export class AbonnesService {
 
     return this._http.get<Abonnes[]>(this.baseUrl+'/abonnes').map(map=>map);
 }
-  getAbonne(id:number){ 
-
+  getAbonne(id:number){
     return this._http.get<Abonnes>(this.baseUrl+'/abonnes/'+id).map(map=>map);
 }
-  deleteAbonne(id:number){
 
+getPageAbonne(page:number):Observable<Abonnes[]>{
+  return this._http.get<Abonnes[]>(this.baseUrl+'/abonnes/listabonnes?page='+page).map(map=>map);
+}
+
+getSearchAbonne(code:String, id_Stucture:number, page:number){
+  return this._http.get(this.baseUrl+'/abonnes/rechercher?mc='+code+'&mid='+id_Stucture+'&page='+page).map(map=>map);
+}
+
+
+  deleteAbonne(id:number){
     return this._http.delete(this.baseUrl+'/abonnes/'+id).map(map=>map);
 }
   createAbonne(abonne:Abonnes){
-
     return this._http.post(this.baseUrl+'/abonnes',abonne).map(map=>map);
 }
    
    updateAbonne(abonne:Abonnes){
-
     return this._http.put(this.baseUrl+'/abonnes',abonne).map(map=>map); 
 }
   

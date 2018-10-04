@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { AbonnesRoutingModule } from './abonnes-routing.module';
 import { ListAbonnesComponent } from './list-abonnes/list-abonnes/list-abonnes.component';
 import { AddAbonnesComponent } from './add-abonnes/add-abonnes.component';
+import { EditAbonnesComponent } from './edit-abonnes/edit-abonnes.component';
+import { DeleteAbonneComponent } from './delete-abonne/delete-abonne.component';
 
 @NgModule({
   imports: [
@@ -12,7 +14,8 @@ import { AddAbonnesComponent } from './add-abonnes/add-abonnes.component';
     FormsModule,
     ModalModule.forRoot(),
     AbonnesRoutingModule
+  
   ],
-  declarations: [ListAbonnesComponent, AddAbonnesComponent]
+  declarations: [ListAbonnesComponent, AddAbonnesComponent, EditAbonnesComponent, DeleteAbonneComponent]
 })
 export class AbonnesModule { }

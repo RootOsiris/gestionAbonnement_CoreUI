@@ -19,6 +19,13 @@ const routes: Routes = [
         }
       },
       {
+        path: 'recherche/:code && :denomination',
+        component: ListStructureComponent,
+        data: {
+          title: 'Recherche'
+        }
+      },
+      {
         path: 'addStructure',
         component: AddStructureComponent,
         data: {
